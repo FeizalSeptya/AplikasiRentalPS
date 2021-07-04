@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RentalPS</string>
+    <string name="Nama">Nama Pemesan</string>
+    <string name="tPS_3">PS 3</string>
+    <string name="tPS_4">PS 4</string>
+    <string name="tData">Data Pemesan</string>
+    <string name="tDurasi">Durasi Peminjaman</string>
+</resources>
