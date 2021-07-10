@@ -6,7 +6,7 @@ import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ActivityHome extends AppCompatActivity {
-    private static int SPLASH_TIME_OUT = 3000;
+    private static int SPLASH_TIME_OUT = 3000; //Waktu proses loading untuk masuk ke halaman kedua
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -14,6 +14,7 @@ public class ActivityHome extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                //Menampilkan tampilan mainactivity setelah loading dari activityhome
                 Intent intent = new Intent(ActivityHome.this, MainActivity.class);
                 startActivity(intent);
                 finish();

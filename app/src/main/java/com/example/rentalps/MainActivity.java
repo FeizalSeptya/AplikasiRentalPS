@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+//Mendeklarasikan variabel tipe EditText, Button, dan TextView
 public class MainActivity extends AppCompatActivity {
     private EditText edtnama, edtNotel, edtpilihanPS, edtDurasi, edtharga, edtAlamat;
     private Button btnproses;
@@ -28,8 +29,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Menampilkan Judul dari aplikasi
         getSupportActionBar().setTitle("TRIXXY PLAYSTATION");
 
+        //Menghubungkan setiap variabel dengan textview pada layout
         edtnama= (EditText) findViewById(R.id.namapenyewa);
         edtpilihanPS= (EditText) findViewById(R.id.pilihanPS);
         edtNotel = (EditText) findViewById(R.id.notel);
@@ -47,11 +50,11 @@ public class MainActivity extends AppCompatActivity {
         txtharga = (TextView) findViewById(R.id.total);
 
 
-        //memberikan action pada tombol proses
-
+        //memberikan action untuk menampilkan data
         btnproses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Menampilkan isi dari data penyewa
                 String namaData = edtnama.getText().toString().trim();
                 String pilihanPSsewa = edtpilihanPS.getText().toString().trim();
                 String total = edtharga.getText().toString().trim();
@@ -59,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 String tAlamat = edtAlamat.getText().toString().trim();
                 String tNotel = edtNotel.getText().toString().trim();
 
-
+                //Menampilkan data dari penyewa
                 double h = Double.parseDouble(total);
                 txtharga.setText("Total = " + total);
                 txtDurasi.setText("Durasi = " + tDurasi);
@@ -69,9 +72,10 @@ public class MainActivity extends AppCompatActivity {
                 txtNotel.setText("Nomor Telepon = " + tNotel);
 
 
-                //memberikan action pada tombol reset data
+
             }
         });
+        //memberikan action pada tombol reset data
         btnhapus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,11 +86,12 @@ public class MainActivity extends AppCompatActivity {
                 txtAlamat.setText("Alamat Penyewa = ");
                 txtNotel.setText("Nomor Telepon = ");
 
+                //Menampilkan pesan dari hasil proses reset data
                 Toast.makeText(getApplicationContext(),"Data berhasil direset", Toast.LENGTH_LONG).show();
 
-                // memberikan action pada tombol keluar
             }
         });
+        // memberikan action pada tombol keluar dari aplikasi
         btnexit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
